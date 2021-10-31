@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update - employee</title>
+    <link media="all" rel="stylesheet" th:href="@{/style.css}" type="text/css"/>
+</head>
+<body>
+<table id="wrapper">
+    <tr>
+        <td id="header">
+            <a>Sign In</a>
+            <span>|</span>
+            <a>Profile</a>
+            <img src="https://png.pngtree.com/png-vector/20190223/ourmid/pngtree-profile-glyph-black-icon-png-image_691589.jpg">
+        </td>
+    </tr>
+    <tr>
+        <td id="content-wrapper">
+            <h2>Update employee:</h2>
+            <form action="#"  th:action="@{/update-employee}" th:object="${employee}" method="post">
+                Employee id:<br>
+                <input th:field="*{employeeId}" type="number">
+                <br>
+                <br>
+                First name:<br>
+                <input th:field="*{firstName}" type="text">
+                <br>
+                <br>
+                Last name:<br>
+                <input th:field="*{lastName}" type="text">
+                <br>
+                <br>
+                Department:<br>
+                <input th:field="*{departmentId}" type="number">
+                <br>
+                <br>
+                Job:<br>
+                <input th:field="*{jobTitle}" type="text">
+                <br>
+                <br>
+                Gender:<br>
+                <input th:field="*{gender}" type="text">
+                <br>
+                <br>
+                Birth date:<br>
+                <input th:field="*{birthDate}" type="text">
+                <br>
+                <br>
+                <input type="submit" class="button4" value="Save">
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

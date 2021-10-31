@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Single - employee</title>
+    <link media="all" rel="stylesheet" th:href="@{/style.css}" type="text/css"/>
+</head>
+<body>
+<table id="wrapper">
+    <tr>
+        <td id="header">
+            <a>Sign In</a>
+            <span>|</span>
+            <a>Profile</a>
+            <img src="https://png.pngtree.com/png-vector/20190223/ourmid/pngtree-profile-glyph-black-icon-png-image_691589.jpg">
+        </td>
+    </tr>
+    <tr>
+        <td id="content-wrapper">
+            <h2>Employee:</h2>
+                <b>Employee id:</b><br>
+                <span th:text="${employee.employeeId}"></span>
+                <br>
+                <br>
+                <b>First name:</b><br>
+                <span th:text="${employee.firstName}"></span>
+                <br>
+                <br>
+                <b>Last name:</b><br>
+                <span th:text="${employee.lastName}"></span>
+                <br>
+                <br>
+                <b>Department:</b><br>
+                <span th:text="${employee.departmentId}"></span>
+                <br>
+                <br>
+                <b>Job:</b><br>
+                <span th:text="${employee.jobTitle}"></span>
+                <br>
+                <br>
+                <b>Gender:</b><br>
+                <span th:text="${employee.gender}"></span>
+                <br>
+                <br>
+                <b>Birth date:</b><br>
+                <span th:text="${employee.birthDate}"></span>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

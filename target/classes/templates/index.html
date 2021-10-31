@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee</title>
+    <link media="all" rel="stylesheet" th:href="@{/style.css}" type="text/css"/>
+</head>
+<body>
+
+<table id="wrapper">
+    <tr>
+
+        <td id="header">
+            <a>Sign In</a>
+
+            <span>|</span>
+
+            <a>Profile</a>
+            <img src="https://png.pngtree.com/png-vector/20190223/ourmid/pngtree-profile-glyph-black-icon-png-image_691589.jpg">
+        </td>
+
+    </tr>
+    <tr>
+        <td id="content-wrapper">
+            <h2>list of employees:</h2>
+            <table id="list-employees" border="1">
+                <tr>
+                    <td width="20">Id</td>
+                    <td width="120">First name</td>
+                    <td width="120">Last name</td>
+                    <td width="120">Department id</td>
+                    <td width="60%">Job</td>
+                    <td width="120">Gender</td>
+                    <td width="40%">Date of birth</td>
+                    <td width="70"></td>
+                    <td width="20"></td>
+                    <td width="20"></td>
+                </tr>
+                <tr th:each="employee:${foundEmployees}">
+                    <td th:text="${employee.employeeId}"></td>
+                    <td th:text="${employee.firstName}"></td>
+                    <td th:text="${employee.lastName}"></td>
+                    <td th:text="${employee.departmentId}"></td>
+                    <td th:text="${employee.jobTitle}"></td>
+                    <td th:text="${employee.gender}"></td>
+                    <td th:text="${employee.birthDate}"></td>
+                    <td> <a th:href="@{/single-employee/{id}(id=${employee.employeeId})}">Open</a></td>
+                    <td>
+                        <a th:href="@{/update-employee/{id}(id=${employee.employeeId})}">
+                            <img width="20" src="http://s1.iconbird.com/ico/0612/prettyoffice/w256h2561339405884Edit256.png">
+                        </a>
+                    </td>
+                    <td>
+                        <a th:href="@{/delete-employee/{id}(id=${employee.employeeId})}">
+                            <img width="20" src="http://s1.iconbird.com/ico/2013/8/429/w256h2561377939915185090deletegarbagestreamline2.png">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            <table id="list-pagination">
+                <tr>
+                    <td width="100%"></td>
+                    <td>
+                        <a>
+                            <img height="20" src="https://cdn-icons-png.flaticon.com/512/271/271220.png">
+                        </a>
+                    </td>
+                    <td>1</td>
+                    <td>
+                        <a>
+                            <img height="20" src="https://cdn-icons-png.flaticon.com/512/271/271228.png">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            <a href="/create-employee" class="button25">Create Employee</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
